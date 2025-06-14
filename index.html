@@ -4,104 +4,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Bakhtiar Bimantoro</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light gray background */
+        }
+        .section-title {
+            border-bottom: 2px solid #3b82f6; /* Blue accent */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e3a8a; /* Darker blue */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .nav-link {
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            transition: background-color 0.3s, color 0.3s;
+            color: #374151; /* Gray text */
+        }
+        .nav-link:hover, .nav-link.active {
+            background-color: #3b82f6; /* Blue accent */
+            color: white;
+        }
+        .skill-tag {
+            background-color: #e0e7ff; /* Light indigo */
+            color: #3730a3; /* Indigo */
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <img src="assets/images/foto-profil-anda.jpg" alt="Foto Bakhtiar Bimantoro" class="profile-pic">
-            <h1>BAKHTIAR BIMANTORO</h1>
-            <p>Electrical and Instrumentation Engineering</p>
-            <div class="contact-info">
-                <p>+62 896-5544-8566</p>
-                <p><a href="www.linkedin.com/in/bakhtiar-bimantoro-744154258" target="_blank">LinkedIn: Bakhtiar Bimantoro</a></p>
-                <p>bakhtiarbimantoro1921@gmail.com</p>
-                <p>Semarang City, Indonesia</p>
-				<p><a href="files/CV_Bakhtiar_Bimantoro.pdf" download class="btn-download-cv">Download My CV (PDF)</a></p>
+<body class="text-gray-800">
+
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="font-bold text-xl text-blue-600">Bakhtiar Bimantoro</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#profile" class="nav-link">Profil</a>
+                        <a href="#experience" class="nav-link">Pengalaman Kerja</a>
+                        <a href="#organization" class="nav-link">Pengalaman Organisasi</a>
+                        <a href="#education" class="nav-link">Pendidikan</a>
+                        <a href="#skills" class="nav-link">Keahlian</a>
+                        <a href="#projects" class="nav-link">Pengalaman Proyek</a>
+                        <a href="#awards" class="nav-link">Penghargaan</a>
+                        <a href="files/CV_Bakhtiar_Bimantoro.pdf" download class="nav-link bg-green-500 text-white hover:bg-green-600">Download CV</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
-    </header>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#profile" class="nav-link block">Profil</a>
+                <a href="#experience" class="nav-link block">Pengalaman Kerja</a>
+                <a href="#organization" class="nav-link block">Pengalaman Organisasi</a>
+                <a href="#education" class="nav-link block">Pendidikan</a>
+                <a href="#skills" class="nav-link block">Keahlian</a>
+                <a href="#projects" class="nav-link block">Pengalaman Proyek</a>
+                <a href="#awards" class="nav-link block">Penghargaan</a>
+                <a href="files/CV_Bakhtiar_Bimantoro.pdf" download class="nav-link block bg-green-500 text-white hover:bg-green-600">Download CV</a>
+            </div>
+        </div>
+    </nav>
 
-    <main class="container">
-        <section id="profile-summary">
-            <h2>PROFILE SUMMARY</h2>
-            <p>I am an Electrical and Instrumentation Engineer specializing in intelligent robotics, embedded systems, and industrial automation powered by AI and IoT.  I have hands-on experience in developing robotic systems, image processing applications, and embedded control systems.  Proficient in IoT system design, motor control, sensor integration, and PLC & HMI programming, I am also actively engaged in computer vision research for Industry 4.0, with strong capabilities in CAD design and 3D printing for functional product prototyping. </p>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <header class="text-center mb-12 pt-8">
+            <img src="assets/images/BAKHTIAR BIMANTORO.jpg" alt="Foto Bakhtiar Bimantoro" class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-6 object-cover shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/E2E8F0/3B82F6?text=Foto+Anda';">
+            <h1 class="text-4xl font-bold text-gray-900">BAKHTIAR BIMANTORO</h1>
+            <p class="text-xl text-blue-600 mt-1">Electrical and Instrumentation Engineering</p>
+            <div class="mt-4 flex flex-wrap justify-center space-x-4 text-sm text-gray-600">
+                <span>Semarang City, Indonesia</span>
+                <span>|</span>
+                <a href="tel:+6289655448566" class="hover:text-blue-600">+62 896-5544-8566</a>
+                <span>|</span>
+                <a href="mailto:bakhtiarbimantoro1921@gmail.com" class="hover:text-blue-600">bakhtiarbimantoro1921@gmail.com</a>
+            </div>
+            <a href="https://www.linkedin.com/in/bakhtiar-bimantoro-744154258" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                LinkedIn Profile
+            </a>
+        </header>
+
+        <section id="profile" class="mb-12 scroll-mt-20">
+            <h2 class="section-title">Ringkasan Profil</h2>
+            <div class="card">
+                <p class="text-gray-700 leading-relaxed profile-text">
+                    I am an Electrical and Instrumentation Engineer specializing in intelligent robotics, embedded systems, and industrial automation powered by AI and IoT.  I have hands-on experience in developing robotic systems, image processing applications, and embedded control systems.  Proficient in IoT system design, motor control, sensor integration, and PLC & HMI programming, I am also actively engaged in computer vision research for Industry 4.0, with strong capabilities in CAD design and 3D printing for functional product prototyping. 
+                </p>
+            </div>
         </section>
 
-        <section id="education">
-            <h2>EDUCATION</h2>
-            <div class="item">
-                <h3>Politeknik Negeri Semarang</h3>
-                <p>Electrical Engineering | 2022 - Present</p>
-            </div>
-            <div class="item">
-                <h3>SMKN 3 Tegal</h3>
-                <p>Electronics Engineering | 2019 - 2022</p>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2>SKILLS</h2>
-            <div class="skills-category">
-                <h3>Technical Skills</h3>
-                <ul>
-                    <li>Vision AI</li>
-                    <li>Embedded Systems</li>
-                    <li>IoT System Design</li>
-                    <li>Robotics</li>
-                    <li>PLC & HMI Programming</li>
-                    <li>CAD & 3D Printing</li>
-                    <li>Automation System</li>
-                    <li>Sensor-Actuator Integration</li>
+        <section id="experience" class="mb-12 scroll-mt-20">
+            <h2 class="section-title">Pengalaman Kerja</h2>
+            <div class="card">
+                <h3 class="text-xl font-semibold text-gray-800">Technician</h3>
+                <p class="text-md text-blue-600">CV. MITRA MAPAN, Tegal, Central Java</p>
+                <p class="text-sm text-gray-500 mb-2">July 2021 – December 2021</p>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                    <li>Assisted in the maintenance and repair of electronic equipment. </li>
+                    <li>Supported installation and component testing processes. </li>
+                    <li>Coordinated with the technical team to ensure smooth operations. </li>
                 </ul>
             </div>
-            <div class="skills-category">
-                <h3>Soft Skills</h3>
-                <ul>
-                    <li>Leadership</li>
-                    <li>Problem Solving</li>
-                    <li>Time Management</li>
-                    <li>Adaptability</li>
-                </ul>
-            </div>
         </section>
-
-        <section id="awards">
-            <h2>AWARDS</h2>
-            <div class="item">
-                <h3>1st Place - Innovative Product Design Category</h3>
-                <p>Politeknik Negeri Semarang | September 2024 </p>
-            </div>
-            <div class="item">
-                <h3>Silver Medal - Electronics and IoT Category</h3>
-                <p>Indonesian Young Scientist Association (IYSA) | April 2024 </p>
-            </div>
-            <div class="item">
-                <h3>1st Place - Robot Transporter Category</h3>
-                <p>Politeknik Negeri Semarang | February 2023 </p>
-            </div>
-        </section>
-
-        <section id="project-experience">
-            <h2>PROJECT EXPERIENCE</h2>
-            <div class="item">
-                <h3>Custom Electronics System Design & Implementation</h3>
-                <ul>
-                    <li>Tracking device using SIM800L GPRS module</li>
-                    <li>Temperature monitoring and alarm system</li>
-                    <li>Home power consumption monitoring system</li>
-                    <li>4-DOF robotic arm with vacuum end-effector for moringa leaf</li>
-                </ul>
-            </div>
-            </section>
-
-        <section id="organization-experience">
-            <h2>ORGANIZATION EXPERIENCE</h2>
-            <div class="item">
-                <h3>Polines Robotic Evolution (POLIREVO)</h3>
-                <p>Electronics Division - KRAI Team | July 2023 - July 2024</p>
-                <ul>
+        
+        <section id="organization" class="mb-12 scroll-mt-20">
+            <h2 class="section-title">Pengalaman Organisasi</h2>
+            <div class="card">
+                <h3 class="text-xl font-semibold text-gray-800">Polines Robotic Evolution (POLIREVO)</h3>
+                <p class="text-md text-blue-600">Electronics Division - KRAI Team</p>
+                <p class="text-sm text-gray-500 mb-2">July 2023 - July 2024</p>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
                     <li>Designed electronic circuit schematics using Eagle and Proteus. </li>
                     <li>Planned electronic components required for the robot. </li>
                     <li>Analyzed and troubleshooted electronic system issues during robot development and testing. </li>
@@ -109,35 +149,157 @@
             </div>
         </section>
 
-        <section id="work-experience">
-            <h2>WORK EXPERIENCE</h2>
-            <div class="item">
-                <h3>CV. MITRA MAPAN - Tegal, Central Java</h3>
-                <p>Technician | July 2021 - December 2021</p>
-                <ul>
-                    <li>Assisted in the maintenance and repair of electronic equipment. </li>
-                    <li>Supported installation and component testing processes. </li>
-                    <li>Coordinated with the technical team to ensure smooth operations.</li>
-                </ul>
+        <section id="education" class="mb-12 scroll-mt-20">
+            <h2 class="section-title">Pendidikan</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-gray-800">Politeknik Negeri Semarang</h3>
+                    <p class="text-md text-blue-600">Electrical Engineering</p>
+                    <p class="text-sm text-gray-500">2022 - Present</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-gray-800">SMKN 3 Tegal</h3>
+                    <p class="text-md text-blue-600">Electronics Engineering</p>
+                    <p class="text-sm text-gray-500">2019-2022</p>
+                </div>
             </div>
         </section>
 
-        <section id="language">
-            <h2>LANGUAGE</h2>
-            <ul>
-                <li>Indonesian - Native / Fluent</li>
-                <li>English - Intermediate</li>
-                <li>Japanese - Beginner</li>
-            </ul>
+        <section id="skills" class="mb-12 scroll-mt-20">
+            <h2 class="section-title">Keahlian</h2>
+            <div class="card">
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Technical Skills:</h3>
+                    <div>
+                        <span class="skill-tag">Vision AI</span>
+                        <span class="skill-tag">Embedded Systems</span>
+                        <span class="skill-tag">IoT System Design</span>
+                        <span class="skill-tag">Robotics</span>
+                        <span class="skill-tag">PLC & HMI Programming</span>
+                        <span class="skill-tag">CAD & 3D Printing</span>
+                        <span class="skill-tag">Automation System</span>
+                        <span class="skill-tag">Sensor-Actuator Integration</span>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Soft Skills:</h3>
+                    <div>
+                        <span class="skill-tag">Leadership</span>
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Time Management</span>
+                        <span class="skill-tag">Adaptability</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Language:</h3>
+                    <div>
+                        <span class="skill-tag">Indonesian - Native / Fluent</span>
+                        <span class="skill-tag">English - Intermediate</span>
+                        <span class="skill-tag">Japanese - Beginner</span>
+                    </div>
+                </div>
+            </div>
         </section>
-    </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Bakhtiar Bimantoro. All rights reserved.</p>
-        </div>
+        <section id="projects" class="mb-12 scroll-mt-20">
+            <h2 class="section-title">Pengalaman Proyek</h2>
+            <div class="card">
+                <h3 class="text-xl font-semibold text-gray-800">Custom Electronics System Design & Implementation</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-1 mt-2">
+                    <li>Tracking device using SIM800L GPRS module </li>
+                    <li>Temperature monitoring and alarm system </li>
+                    <li>Home power consumption monitoring system </li>
+                    <li>4-DOF robotic arm with vacuum end-effector for moringa leaf </li>
+                </ul>
+            </div>
+            </section>
+
+        <section id="awards" class="mb-12 scroll-mt-20">
+            <h2 class="section-title">Penghargaan</h2>
+            <div class="space-y-6">
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-gray-800">1st Place - Innovative Product Design Category</h3>
+                    <p class="text-md text-blue-600">Politeknik Negeri Semarang</p>
+                    <p class="text-sm text-gray-500">September 2024 </p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-gray-800">Silver Medal - Electronics and IoT Category</h3>
+                    <p class="text-md text-blue-600">Indonesian Young Scientist Association (IYSA)</p>
+                    <p class="text-sm text-gray-500">April 2024 </p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-gray-800">1st Place - Robot Transporter Category</h3>
+                    <p class="text-md text-blue-600">Politeknik Negeri Semarang</p>
+                    <p class="text-sm text-gray-500">February 2023 </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="bg-gray-800 text-white text-center py-6 mt-12">
+        <p>&copy; <span id="currentYear"></span> Bakhtiar Bimantoro. All rights reserved.</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        
+        // Active Nav Link Styling
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                // Adjust this value (e.g., -70) if your fixed header obstructs sections
+                if (pageYOffset >= (sectionTop - sectionHeight / 3 - 70)) { 
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') && link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+            // Highlight 'Profil' if scrolled near top
+            if (window.pageYOffset < 200 && navLinks.length > 0) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                const profileLink = document.querySelector('nav a.nav-link[href="#profile"]');
+                if (profileLink) profileLink.classList.add('active');
+            }
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
